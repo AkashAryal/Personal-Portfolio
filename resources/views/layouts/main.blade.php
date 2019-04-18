@@ -24,7 +24,7 @@
         <div class="links mx-auto">
             <a class="dropdown-toggle d-md-none  " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
-                        Dropdown</a>
+                        Click Me!</a>
             <div class="links dropdown-menu mx-auto " aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
@@ -35,12 +35,9 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="links mx-auto">
-                <a href="https://laravel.com/docs">Docs</a>
-                <a href="https://laracasts.com">Laracasts</a>
-                <a href="https://laravel-news.com">News</a>
-                <a href="https://blog.laravel.com">Blog</a>
-                <a href="https://nova.laravel.com">Nova</a>
-                <a href="https://forge.laravel.com">Forge</a>
+                <a href="https://laravel.com/docs">Who am I?</a>
+                <a href="https://laracasts.com">Resume</a>
+                <a href="https://laravel-news.com">Projects</a>
                 <a href="https://github.com/laravel/laravel">GitHub</a>
             </div>
 

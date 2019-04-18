@@ -1,58 +1,73 @@
-@extends('layouts.main')
+@extends('layouts.main') 
+@section('title', "Akash's Portfolio") 
+@section('content')
 
-@section('title', "Akash's Portfolio")
+<div class="container-fluid" style="background-color:white;">
+    <div class="container">
+        @if(session("test"))
+            <p>jjj{{ session('test') }}</p>
+        @endif
 
-        
-        @section('content')
-        
-                <div class="container-fluid" style="background-color:white;">
-                    <div class="container">
-                        <!--for each post, generate card -> cosists of row  x num of col
-                        <div class="row">
-
-                            
-                            <div class="col-md-12">
-                               <p class="py-2"> Lorem ipsum, dolor sit amet consectetur adipisi
-                                cing elit. Ullam animi sequi rerum delectus cons
-                                ectetur, minus dolorem possimus dolores sapiente
-                                 mollitia hic vel placeat aspernatur quidem id v
-                                 itae similique. Velit, iure.</p>
+        <!--Reason why session is uded above but just var name below is because above is return redirect (post)
+        while below is return view() (get)-->
+            @isset($KamiSamaPosts)
+            <?php $postCounter=0; $first=true;?>
+            @foreach($KamiSamaPosts as $post)
+                <?php 
+                    if($postCounter==0){
+                        echo '<div class="row">';
+                    }
+                
+                ?>
+                
+                    <div class="col-md-4 col-xs-12 py-4">
+                        <center>
+                            <div class="card">
+                                <img class="card-img-top img-fluid img-responsive" style="max-height: 17rem" src="{{$post->picURL}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text" style="text-align:left; font-weight:900">{{$post->title}}</p>
+                                <hr></hr>
+                                <p style="text-align:left;">{{$post->postBody}}</p>
+                                <hr></hr>
+                                <!-- ADD ID HERE FOR EDIT DELETE UPDATE ETC...-->
+                               <!-- <a href="{{ route('delete.id', ['id'=>$post->id]) }}">-->
+                                <div class="row">
+                                    <div class="col-md-6 col-xs-6">
+                                        <form action="{{ route('delete.id', ['id'=>$post->id]) }}" method="POST">
+                                            <input class="btn btn-default" type="submit" value="Delete" /> {!! csrf_field() !!}
+                                        </form>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                    <a href="{{ route('edit.id', ['id'=>$post->id]) }}">Edit</a>
+                                    </div>
+                                </div>
+                                    
+                                </div>
                             </div>
-
-                        </div>
-                        end-->
-                        
-                        <div class="row">
-                            <div class="col-md col-xs-12 py-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic, pariatur porro odit consequatur saepe ab expedita, dignissimos cupiditate neque nemo maiores eveniet unde repudiandae quia nobis! Nam, numquam in.
-                            </div>
-                            <div class="col-md col-xs-12 py-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic, pariatur porro odit consequatur saepe ab expedita, dignissimos cupiditate neque nemo maiores eveniet unde repudiandae quia nobis! Nam, numquam in.
-                            </div>
-                            <div class="col-md col-xs-12 py-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic, pariatur porro odit consequatur saepe ab expedita, dignissimos cupiditate neque nemo maiores eveniet unde repudiandae quia nobis! Nam, numquam in.
-                            </div>
-                           
-                            
-                        </div>
-                        <div class="row">
-                            <div class="col-md col-xs-12 py-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic, pariatur porro odit consequatur saepe ab expedita, dignissimos cupiditate neque nemo maiores eveniet unde repudiandae quia nobis! Nam, numquam in.
-                            </div>
-                            <div class="col-md col-xs-12 py-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic, pariatur porro odit consequatur saepe ab expedita, dignissimos cupiditate neque nemo maiores eveniet unde repudiandae quia nobis! Nam, numquam in.
-                            </div>
-                            <div class="col-md col-xs-12 py-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic, pariatur porro odit consequatur saepe ab expedita, dignissimos cupiditate neque nemo maiores eveniet unde repudiandae quia nobis! Nam, numquam in.
-                            </div>                    
-                        </div>
-                                              
-                        
+                        </center>
                     </div>
+                
+                <?php 
+                    if($postCounter==3){
+                        echo '</div>';
+                        $postCounter=0;
+                        $first=false;
+                    }else{
+                        $postCounter++;
+                    }
+                
+                ?>
+            @endforeach
+            @endisset
+                       
 
-                </div>
+    </div>
 
-            </div>
-        </div>
-        @endsection
+</div>
+
+</div>
+</div>
+@endsection
+
+
 </html>

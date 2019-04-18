@@ -1,0 +1,2 @@
+posts now appear on home page fine. Next steps are to add the crud functions (update post, delete post etc...)<DELETE DONE>. CSS. Also set up post page for each post based on id. <a> tag with link to controller sending id should be good. Also make image, title clickable and direct user to post page.
+set up edit. currently trying to find out how get route thing to work in edit.blade.php

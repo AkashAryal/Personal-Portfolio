@@ -3,7 +3,7 @@
 @section('title', "Insert Text Creator")
 
 @section('content')
-    {!! Form::open(['url' => '/secret/submit']) !!}
+    {!! Form::open(['route' => array('edit.id',)] !!}
     <!--label : html name, actual label --> 
         {{ Form::label('title', 'Title') }} 
         {{ Form::text('title', old('title'), array('placeholder'=>'Title', 'class'=>'form-control')) }}
