@@ -3,16 +3,17 @@
 @section('title', "Insert Text Creator")
 
 @section('content')
-    {!! Form::open(['route' => array('edit.id',)] !!}
-    <!--label : html name, actual label --> 
-        {{ Form::label('title', 'Title') }} 
-        {{ Form::text('title', old('title'), array('placeholder'=>'Title', 'class'=>'form-control')) }}
-        
-        {{Form::label('picURL', 'Picture URL')}} 
-        {{Form::text('picURL', old('picURL') , array('placeholder'=>'Picture URL', 'class'=>'form-control'))}}
-        
-        {{Form::label('postBody', 'Enter Post')}} 
-        {{Form::textarea('postBody',  old('postBody') , array('placeholder'=>'Enter Post', 'class'=>'form-control'))}}
+  <!--change edit.id. its wrong route. have to create new one-->
+    {!! Form::open(['route' => array('edit.id',$id)]) !!}
+    <!--label : html name, actual label -->
+        {{ Form::label('title', 'Title') }}
+        {{ Form::text('title', $title, array( 'class'=>'form-control')) }}
+
+        {{Form::label('picURL', 'Picture URL')}}
+        {{Form::text('picURL',$picURL , array( 'class'=>'form-control'))}}
+
+        {{Form::label('postBody', 'Enter Post')}}
+        {{Form::textarea('postBody',  $postBody , array('class'=>'form-control'))}}
 
         {{Form::submit('Submit', array('class'=>'btn btn-primary'))}}
     {!! Form::close() !!}

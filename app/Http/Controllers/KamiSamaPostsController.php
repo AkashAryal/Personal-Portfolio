@@ -10,7 +10,7 @@ class KamiSamaPostsController extends Controller
     public function submit(KamiSamaPost $request){
         $validated = $request->validated();
 
-         
+
             $KamiSamaPosts = new KamiSamaPosts;
 
             $KamiSamaPosts->title=$request->input('title');
@@ -22,12 +22,19 @@ class KamiSamaPostsController extends Controller
         return redirect('/secret'.'/'.$SecretKey)->with('success', 'Post submitted!');
     }
 
+    public function updateView(Request $request, $id){
+      $title=$request->input('title');
+      $postBody=$request->input('postBody');
+      $picURL=$request->input('picURL');
+
+      return redirect("/edit"."/".$id)->with(['id'=>$id,'title'=>$title,'postBody'=>$postBody,'picURL'=>$picURL]);
+    }
     public function dataToHome(){
         $KamiSamaPosts =KamiSamaPosts::all();
         return view("home")->with("KamiSamaPosts",$KamiSamaPosts);
     }
 
-    public function delete(Request $request, $id){
+    public function delete( $id){
         $KamiSamaPosts = new KamiSamaPosts;
 
         $KamiSamaPosts::find($id)->delete();
@@ -37,7 +44,7 @@ class KamiSamaPostsController extends Controller
     public function edit(Request $request, $id){
         $KamiSamaPosts = new KamiSamaPosts;
 
-        
+
     }
 
     public static function getPost($id){

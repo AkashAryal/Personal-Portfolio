@@ -1,5 +1,5 @@
-@extends('layouts.main') 
-@section('title', "Akash's Portfolio") 
+@extends('layouts.main')
+@section('title', "Akash's Portfolio")
 @section('content')
 
 <div class="container-fluid" style="background-color:white;">
@@ -13,13 +13,13 @@
             @isset($KamiSamaPosts)
             <?php $postCounter=0; $first=true;?>
             @foreach($KamiSamaPosts as $post)
-                <?php 
+                <?php
                     if($postCounter==0){
                         echo '<div class="row">';
                     }
-                
+
                 ?>
-                
+
                     <div class="col-md-4 col-xs-12 py-4">
                         <center>
                             <div class="card">
@@ -38,16 +38,22 @@
                                         </form>
                                     </div>
                                     <div class="col-md-6 col-xs-6">
-                                    <a href="{{ route('edit.id', ['id'=>$post->id]) }}">Edit</a>
+                                      <form action="{{ route('updateView',['id'=>$post->id]) }}" method="POST">
+                                          <input class="btn btn-default" type="submit" value="Update" /> {!! csrf_field() !!}
+                                          <input type="hidden" name="title" value="{{ $post->title }}">
+                                          <input type="hidden" name="picURL" value="{{ $post->picURL }}">
+                                          <input type="hidden" name="postBody" value="{{ $post->postBody }}">
+                                      </form>
+                                  <!--  <a href="{{ route('edit.id', ['id'=>$post->id]) }}" id="{{$post->id}}" name="$post->title">Edit</a>-->
                                     </div>
                                 </div>
-                                    
+
                                 </div>
                             </div>
                         </center>
                     </div>
-                
-                <?php 
+
+                <?php
                     if($postCounter==3){
                         echo '</div>';
                         $postCounter=0;
@@ -55,11 +61,11 @@
                     }else{
                         $postCounter++;
                     }
-                
+
                 ?>
             @endforeach
             @endisset
-                       
+
 
     </div>
 
