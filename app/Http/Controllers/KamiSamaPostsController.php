@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\KamiSamaPosts;
 use App\Http\Requests\KamiSamaPost;
 
-
+//rand comment 
 class KamiSamaPostsController extends Controller
 {
     var $SecretKey = '';
