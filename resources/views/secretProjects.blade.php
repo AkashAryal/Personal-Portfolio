@@ -23,9 +23,11 @@
                     <div class="col-md-4 col-xs-12 py-4">
                         <center>
                             <div class="card">
+                              @if(strlen($post->picURL)>0)
                                 <img class="card-img-top img-fluid img-responsive" style="max-height: 17rem" src="{{$post->picURL}}" alt="Card image cap">
+                              @endif
                                 <div class="card-body">
-                                    <p class="card-text" style="text-align:left; font-weight:900">{{$post->title}}</p>
+                                    <p class="card-text" style="text-align:left; font-weight:900; font-size:25">{{$post->title}}</p>
                                 <hr></hr>
                                 <p style="text-align:left;">{{$post->postBody}}</p>
                                 <hr></hr>
@@ -54,7 +56,7 @@
                     </div>
 
                 <?php
-                    if($postCounter==3){
+                    if($postCounter==2){
                         echo '</div>';
                         $postCounter=0;
                         $first=false;

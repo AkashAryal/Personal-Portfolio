@@ -4,7 +4,7 @@
 
 @section('content')
   <!--change edit.id. its wrong route. have to create new one-->
-    {!! Form::open(['route' => array('edit.id',$id)]) !!}
+    {!! Form::open(['route' => ['update.id',$id] ]) !!}
     <!--label : html name, actual label -->
         {{ Form::label('title', 'Title') }}
         {{ Form::text('title', $title, array( 'class'=>'form-control')) }}

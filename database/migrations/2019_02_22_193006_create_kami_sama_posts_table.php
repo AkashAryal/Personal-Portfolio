@@ -16,7 +16,7 @@ class CreateKamiSamaPostsTable extends Migration
         Schema::create('kami_sama_posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string("title");
-            $table->string("picURL");
+            $table->string("picURL")->nullable();;
             $table->text("postBody");
             $table->timestamps();
         });

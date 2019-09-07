@@ -12,12 +12,16 @@
 */
 use Illuminate\Http\Request;
 
-$SecretKey = env('UPDATE_BLOG_KEY','');
-Route::get('/', 'KamiSamaPostsController@dataToHome');
+//The only other apperance of secKey is at KamiSamaPostsController
+$SecretKey = '';
+Route::view('/', 'aboutMe');
+Route::get('/projects', 'KamiSamaPostsController@dataToProjects');
 
-Route::get('/secret'.'/'.$SecretKey, function(){
+Route::get('/secret/add'.'/'.$SecretKey, function(){
 	return view('secret');
 });
+
+Route::get('/secret/projects'.'/'.$SecretKey, 'KamiSamaPostsController@dataToSecretProjects');
 
 Route::get('/edit/{id}', function($id){
 	//check if user can acces to this post SInce user can change id in url
@@ -34,4 +38,5 @@ Route::get('/edit/{id}', function($id){
 
 Route::post('/delete/{id}', 'KamiSamaPostsController@delete')->name("delete.id");
 Route::post('/secret/submit', 'KamiSamaPostsController@submit');
-Route::post('/update/{id}', 'KamiSamaPostsController@updateView')->name("updateView");
+Route::post('/update/{id}','KamiSamaPostsController@update')->name('update.id');
+Route::post('/updateView/{id}', 'KamiSamaPostsController@updateView')->name("updateView");

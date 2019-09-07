@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    
+
 <div class="content">
     <div class="title m-b-md">
         Welcome to my little World!
@@ -26,19 +26,19 @@
                 aria-expanded="false">
                         Click Me!</a>
             <div class="links dropdown-menu mx-auto " aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <a class="dropdown-item" href="https://laravel.com/docs">Docs</a>
+                <a class="dropdown-item" href="">Who am I?</a>
+                <a class="dropdown-item" href="#">Resume</a>
+                <a class="dropdown-item" href="#">Projects</a>
+                <a class="dropdown-item" href="https://laravel.com/docs">GitHub</a>
             </div>
         </div>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="links mx-auto">
-                <a href="https://laravel.com/docs">Who am I?</a>
+                <a href="{{ url('/') }}">Who am I?</a>
                 <a href="https://laracasts.com">Resume</a>
-                <a href="https://laravel-news.com">Projects</a>
-                <a href="https://github.com/laravel/laravel">GitHub</a>
+                <a href="{{ url('/projects') }}">Projects</a>
+                <a href="https://github.com/AkashAryal">GitHub</a>
             </div>
 
         </div>
