@@ -24,7 +24,7 @@
                         <center>
                             <div class="card">
                               @if(strlen($post->picURL)>0)
-                                <img class="card-img-top img-fluid img-responsive" style="max-height: 17rem" src="{{$post->picURL}}" alt="Card image cap">
+                                <img class="card-img-top img-fluid img-responsive" style="max-height: 20rem" src="{{$post->picURL}}" alt="Card image cap">
                               @endif
                                 <div class="card-body">
                                     <p class="card-text" style="text-align:left; font-weight:900; font-size:25">{{$post->title}}</p>

@@ -15,42 +15,48 @@
 
 <body>
 
-<div class="content">
-    <div class="title m-b-md">
-        Welcome to my little World!
+    <div class="content">
+        <div class="title m-b-md">
+            Welcome to my little World!
+        </div>
+
+        <nav class="navbar navbar-expand-md ">
+          @section('navBar')
+            @show
+            <div class="links mx-auto">
+                <div class="btn-group">
+                    <button type="button" class="btn  d-md-none">Click Me!</button>
+                    <button type="button" class="btn  dropdown-toggle dropdown-toggle-split d-md-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ url('/') }}">Who am I?</a>
+                        <a class="dropdown-item" href="https://drive.google.com/file/d/1mXhgreU8ksyFOHRoFaZv-7aXX9u4HK2N/view?usp=sharing" target="_blank">Resume</a>
+                        <a class="dropdown-item" href="{{ url('/projects') }}">Projects</a>
+                        <a class="dropdown-item" href="https://github.com/AkashAryal" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="links mx-auto">
+                    <a href="{{ url('/') }}">Who am I?</a>
+                    <a href="https://drive.google.com/file/d/1mXhgreU8ksyFOHRoFaZv-7aXX9u4HK2N/view?usp=sharing" target="_blank">Resume</a>
+                    <a href="{{ url('/projects') }}">Projects</a>
+                    <a href="https://github.com/AkashAryal" target="_blank">GitHub</a>
+                </div>
+
+            </div>
+
+        </nav>
     </div>
 
-    <nav class="navbar navbar-expand-md ">
-        <div class="links mx-auto">
-            <a class="dropdown-toggle d-md-none  " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                        Click Me!</a>
-            <div class="links dropdown-menu mx-auto " aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="">Who am I?</a>
-                <a class="dropdown-item" href="#">Resume</a>
-                <a class="dropdown-item" href="#">Projects</a>
-                <a class="dropdown-item" href="https://laravel.com/docs">GitHub</a>
-            </div>
-        </div>
+    <hr style="margin-bottom: 0">
+    </hr>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="links mx-auto">
-                <a href="{{ url('/') }}">Who am I?</a>
-                <a href="https://laracasts.com">Resume</a>
-                <a href="{{ url('/projects') }}">Projects</a>
-                <a href="https://github.com/AkashAryal">GitHub</a>
-            </div>
-
-        </div>
-
-    </nav>
-</div>
-
-<hr style="margin-bottom: 0"></hr>
-
-<div id="main">
-    @yield('content')
-</div>
+    <div id="main">
+        @yield('content')
+    </div>
 
 </body>
 
