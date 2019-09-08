@@ -31,8 +31,9 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ url('/') }}">Who am I?</a>
-                        <a class="dropdown-item" href="https://drive.google.com/file/d/1mXhgreU8ksyFOHRoFaZv-7aXX9u4HK2N/view?usp=sharing" target="_blank">Resume</a>
+                        <a class="dropdown-item" href="https://drive.google.com/file/d/1TbQJldco64pZelpqELeLscbEjD2BfBMG/view?usp=sharing" target="_blank">Resume</a>
                         <a class="dropdown-item" href="{{ url('/projects') }}">Projects</a>
+                        <a class="dropdown-item" href="{{ url('/research') }}" target="_blank">Research</a>
                         <a class="dropdown-item" href="https://github.com/AkashAryal" target="_blank">GitHub</a>
                     </div>
                 </div>
@@ -41,8 +42,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="links mx-auto">
                     <a href="{{ url('/') }}">Who am I?</a>
-                    <a href="https://drive.google.com/file/d/1mXhgreU8ksyFOHRoFaZv-7aXX9u4HK2N/view?usp=sharing" target="_blank">Resume</a>
+                    <a href="https://drive.google.com/file/d/1TbQJldco64pZelpqELeLscbEjD2BfBMG/view?usp=sharing" target="_blank">Resume</a>
                     <a href="{{ url('/projects') }}">Projects</a>
+                    <a href="{{ url('/research') }}">Research</a>
                     <a href="https://github.com/AkashAryal" target="_blank">GitHub</a>
                 </div>
 

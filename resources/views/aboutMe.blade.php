@@ -23,6 +23,7 @@
            embarking in fun programming projects whenever I have time (like this one!). I really enjoy the creative and impactful nature of
            development. In all my projects I aim to create products that have impact and are useful in everyday life.<BR><BR>
            In my free time I enjoy reading books and playing tennis. Ah, I'm also a big fan of anime, manga, light novels :p.</p>
+           <p>Feel free to contact me at <strong>aa753@cornell.edu</strong></p>
       </div>
     </div>
 </div>
