@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\KamiSamaPosts;
 use App\Http\Requests\KamiSamaPost;
 
-//rand comment 
+//rand comment
 class KamiSamaPostsController extends Controller
 {
     var $SecretKey = '';
@@ -31,11 +31,11 @@ class KamiSamaPostsController extends Controller
       return redirect("/edit"."/".$id)->with(['id'=>$id,'title'=>$title,'postBody'=>$postBody,'picURL'=>$picURL]);
     }
     public function dataToProjects(){
-        $KamiSamaPosts =KamiSamaPosts::all();
+        $KamiSamaPosts =KamiSamaPosts::orderBy('id','ASC')->get();
         return view("projects")->with("KamiSamaPosts",$KamiSamaPosts);
     }
     public function dataToSecretProjects(){
-        $KamiSamaPosts =KamiSamaPosts::all();
+        $KamiSamaPosts =KamiSamaPosts::orderBy('id','ASC')->get();
         return view("secretProjects")->with("KamiSamaPosts",$KamiSamaPosts);
     }
 
