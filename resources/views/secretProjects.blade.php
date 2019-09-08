@@ -29,7 +29,7 @@
                                 <div class="card-body">
                                     <p class="card-text" style="text-align:left; font-weight:900; font-size:25">{{$post->title}}</p>
                                 <hr></hr>
-                                <p style="text-align:left; white-space: pre-line;">{{$post->postBody}}</p>
+                                <p style="text-align:left; white-space: pre-line;">{{!! $post->postBody !!}}</p>
                                 <hr></hr>
                                 <!-- ADD ID HERE FOR EDIT DELETE UPDATE ETC...-->
                                <!-- <a href="{{ route('delete.id', ['id'=>$post->id]) }}">-->
