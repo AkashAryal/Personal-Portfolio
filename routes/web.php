@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 //The only other apperance of secKey is at KamiSamaPostsController
 $SecretKey = '';
 Route::view('/', 'aboutMe');
+Route::view('/research', 'research');
 Route::get('/projects', 'KamiSamaPostsController@dataToProjects');
 
 Route::get('/secret/add'.'/'.$SecretKey, function(){
