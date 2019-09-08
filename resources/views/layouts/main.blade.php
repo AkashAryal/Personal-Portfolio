@@ -17,7 +17,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Welcome to my little World!
+            Welcome to my little world!
         </div>
 
         <nav class="navbar navbar-expand-md ">
