@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', "Insert Text Creator")
+@section('title', "Edit Post")
 
 @section('content')
   <!--change edit.id. its wrong route. have to create new one-->

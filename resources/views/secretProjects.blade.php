@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', "Akash's Portfolio")
+@section('title', "Secret - Akash's Portfolio")
 @section('content')
 
 <div class="container-fluid" style="background-color:white;">
