@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', "Insert Text Creator")
+@section('title', "About Me - Akash Aryal")
 
 @section('navBar')
 

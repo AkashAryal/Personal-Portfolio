@@ -1,17 +1,17 @@
 @extends('layouts.main')
 
-@section('title', "Insert Text Creator")
+@section('title', "Secret - Submit Post")
 
 @section('content')
     {!! Form::open(['url' => '/secret/submit']) !!}
-    <!--label : html name, actual label --> 
-        {{ Form::label('title', 'Title') }} 
+    <!--label : html name, actual label -->
+        {{ Form::label('title', 'Title') }}
         {{ Form::text('title', old('title'), array('placeholder'=>'Title', 'class'=>'form-control')) }}
-        
-        {{Form::label('picURL', 'Picture URL')}} 
+
+        {{Form::label('picURL', 'Picture URL')}}
         {{Form::text('picURL', old('picURL') , array('placeholder'=>'Picture URL', 'class'=>'form-control'))}}
-        
-        {{Form::label('postBody', 'Enter Post')}} 
+
+        {{Form::label('postBody', 'Enter Post')}}
         {{Form::textarea('postBody',  old('postBody') , array('placeholder'=>'Enter Post', 'class'=>'form-control'))}}
 
         {{Form::submit('Submit', array('class'=>'btn btn-primary'))}}
